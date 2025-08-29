@@ -1,5 +1,7 @@
 # Analiza PCAP – Fałszywe domeny podszywające się pod Microsoft (C2)
 
+---
+
 ## Opis
 Repozytorium zawiera wyniki analizy pliku PCAP.  
 W ruchu sieciowym wykryto komunikację z **domenami typosquatting** podszywającymi się pod usługi Microsoft.  
@@ -34,6 +36,7 @@ LAN segment broadcast address:  10.6.13[.]255
   - **Issuer:** Google Trust Services (zaufane CA)  
   - **SAN:** `dng-microsoftds.com` → certyfikat wystawiony na fałszywą domenę  
 
+---
 
 ## Wnioski
 Analiza PCAP jednoznacznie wskazuje na **komunikację malware z infrastrukturą C2** ukrytą za Cloudflare.  
@@ -51,6 +54,7 @@ Zainfekownym hostem jest `10.6.13.133`
 - `splunk_spl.txt` – zapytania huntingowe do Splunka  
 - `stix_bundle.json` – paczka IoC w formacie STIX 2.1 (Threat Intelligence)  
 
+---
 
 ## Rekomendacje
 1. Zablokować podejrzane domeny na poziomie DNS/firewalla.  
