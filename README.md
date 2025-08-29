@@ -12,6 +12,7 @@ AD environment name:  MASSFRICTION
 LAN segment gateway:  10.6.13[.]1
 LAN segment broadcast address:  10.6.13[.]255
 
+---
 
 ## Najważniejsze ustalenia
 - **DNS**  
