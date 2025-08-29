@@ -1,0 +1,33 @@
+{
+  "type": "bundle",
+  "id": "1",
+  "objects": [
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--1",
+      "value": "dng-microsoftds.com"
+    },
+    {
+      "type": "domain-name",
+      "spec_version": "2.1",
+      "id": "domain-name--5",
+      "value": "event-datamicrosoft.live"
+    },
+    {
+      "type": "ipv4-addr",
+      "spec_version": "2.1",
+      "id": "ipv4-addr--9",
+      "value": "172.67.146.241"
+    },
+    {
+      "type": "indicator",
+      "spec_version": "2.1",
+      "id": "indicator--1",
+      "name": "Fake Microsoft C2 domains",
+      "pattern": "[domain-name:value = 'dng-microsoftds.com' OR domain-name:value = 'event-datamicrosoft.live']",
+      "pattern_type": "stix",
+      "valid_from": "2025-08-28T00:00:00Z"
+    }
+  ]
+}
