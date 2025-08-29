@@ -1,0 +1,47 @@
+alert udp any any -> any 53 (
+  msg: "Fałszywa domena poszywająca się pod Microsoft";
+  content: "dng-microsoftds.com"; nocase;
+  sid: 100001;
+  rev: 1;
+)
+alert udp any any -> any 53 (
+  msg: "Fałszywa domena poszywająca się pod Microsoft";
+  content: "event-datamicrosoft.live"; nocase;
+  sid: 100002;
+  rev: 1;
+)
+alert http any any -> any any (
+  msg: "C2 HTTP POST do fałszywej domeny";
+  http.host; content: "event-datamicrosoft.live"; nocase;
+  http.method; content: "POST"; nocase;
+  http.content_type; content:"application/octet-steam"; nocase;
+  sid: 100003;
+  rev: 1;
+)
+alert http any any -> any any (
+  msg: "Podejrzany User-Agent PowerShell w ruchu HTTP";
+  http.user_agent; content: "WindowsPowerShell/5.1"; nocase;
+  http.method; content: "GET"; nocase;
+  sid: 100004;
+  rev: 1;
+)
+alert tls any any -> any any (
+  msg: "TLS  handshake do fałszywej domeny Microsoftu";
+  tls.sni; content: "dng-microsoftds.com"; nocase;
+  sid: 100005;
+  rev: 1;
+)
+alert http any any -> any any (
+  msg: "HTTP POST o bardzo dużym rozmiarze ninarnego payloadu";
+  flow: to_server, established;
+  http.method; content: "POST"; nocase;
+  http.content_type; content: "application/octet-stream"; nocase;
+  pcre: "/Content-Length:\s?(3[0-9]{4,},|[4-9]{4,}/H";
+  sid: 100006;
+  rev: 1;
+)
+
+  
+  
+  
+  
