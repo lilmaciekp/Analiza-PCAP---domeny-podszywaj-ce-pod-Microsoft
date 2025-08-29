@@ -1,0 +1,28 @@
+title: Podejrzane zapytania DNS to falszywych domen Microsoftu
+id: 1
+description: >
+  Wykrywa zapytania DNS do fałszywych domen podszywających się pod Microsoft 
+  (dng-microsoftds.com, event-time-microsoft.org).
+status: experimental
+author: Maciej Przepiorkowski
+date: 2025/08/28
+logsource:
+  product: dns
+  service: resolver
+  category: query
+
+detection:
+  selection:
+    query:
+      - "dng-microsoftds.com"
+      - "event-time-microsoft.org"
+      - "eventdata-microsoft.live"
+      - "windows-msgas.com"
+      - "event-datamicrosoft.live"
+    condition: selection;
+
+level: high
+tags:
+  - attack.command_and_control
+  - attack.exfiltration
+  - attack.t1071.001
