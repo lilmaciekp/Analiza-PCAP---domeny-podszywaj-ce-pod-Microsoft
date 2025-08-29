@@ -50,8 +50,7 @@ Zainfekownym hostem jest `10.6.13.133`
 - `iocs.csv` – zebrane wskaźniki kompromitacji (domeny i IP)  
 - `suricata.rules` – reguły IDS (DNS/HTTP/TLS)  
 - `sigma.yml` – reguła Sigma (detekcja DNS)  
-- `sentinel_kql.txt` – zapytania huntingowe do Microsoft Sentinel/Defender  
-- `splunk_spl.txt` – zapytania huntingowe do Splunka  
+- `sentinel_kql.txt` – zapytania huntingowe do Microsoft Sentinel/Defender   
 - `stix_bundle.json` – paczka IoC w formacie STIX 2.1 (Threat Intelligence)  
 
 ---
