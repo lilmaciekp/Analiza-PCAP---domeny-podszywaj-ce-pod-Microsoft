@@ -1,0 +1,9 @@
+﻿type,value ,source,description
+domain,dng-microsoftds.com,DNS,Domeny podszywjące się pod domeny firmy Microsoft
+domain,event-time-microsoft.org,DNS,
+domain,windows-msgas.com,DNS,
+domain,event-datamicrosoft.live,DNS,
+ip,172.67.146.241,TLS,Cloudflare edge - komunikacja C2
+domain,event-datamicrosoft.live,HTTP,POST z binarnym payloadem (możliwa exfiltracja danych
+domain,event-time-microsoft.org,HTTP,GET z komendami PowerShell
+ip,104.21.10.227,DNS,Cloudflare edge (powiązane z dng-microsoft.com)
