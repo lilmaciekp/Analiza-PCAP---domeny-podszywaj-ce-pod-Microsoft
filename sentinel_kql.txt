@@ -1,0 +1,30 @@
+DnsEvents
+| where QueryName in~ ("dng-microsoftds.com",
+                       "event-time-microsoft.org",
+                       "eventdata-microsoft.live",
+                       "windows-msgas.com",
+                       "event-datamicrosoft.live")
+| project Timestamp, DeviceName, QueryName, QueryType, RemoteIP
+
+DeviceNetworkEvents
+| where RemoteUrl has_any ("event-datamicrosoft.live", "event-time-microsoft.org")
+| where HttpMethod == "POST"
+| where UserAgent contains "PowerShell"
+| project Timestamp, DeviceName, RemoteUrl, HttpMethod, UserAgent, InitiatingProcessFileName
+
+DeviceNetworkEvents
+| where RemoteUrl has "dng-microsoftds.com"
+| where Protocol == "TLS"
+| project Timestamp, DeviceName, RemoteUrl, RemoteIP, InitiatingProcessFileName
+
+DeviceNetworkEvents
+| where HttpMethod == "POST"
+| where RemoteIP in ("172.67.146.241", "104.21.10.227")
+| where RemotePort == 443 or RemotePort == 80
+| where HttpContentLength > 30000
+| project Timestamp, DeviceName, RemoteIP, RemotePort, HttpContentLength, InitiatingProcessFileName
+
+// Query 1 – DNS lookup for fake Microsoft domains
+// Query 2 – HTTP POST with PowerShell User-Agent
+// Query 3 – TLS connection with suspicious SNI
+// Query 4 – Large binary POST exfiltration
