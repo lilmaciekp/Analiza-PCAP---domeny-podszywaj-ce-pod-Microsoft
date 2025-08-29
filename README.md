@@ -7,12 +7,12 @@ Repozytorium zawiera wyniki analizy pliku PCAP.
 W ruchu sieciowym wykryto komunikację z **domenami typosquatting** podszywającymi się pod usługi Microsoft.  
 Artefakty wskazują na możliwą **komunikację Command & Control (C2)** oraz **exfiltrację danych**.
 
-- LAN segment range:  10.6.13[.]0/24   (10.6.13[.]0 through 10.6.13[.]255)
-    - Domain:  massfriction[.]com
-    - Active Directory (AD) domain controller:  10.6.13[.]3 - WIN-DQL4WFWJXQ4
-    - AD environment name:  MASSFRICTION
-    - LAN segment gateway:  10.6.13[.]1
-    - LAN segment broadcast address:  10.6.13[.]255
+- LAN segment range:  `10.6.13[.]0/24`
+    - Domain:  `massfriction[.]com`
+    - Active Directory (AD) domain controller:  `10.6.13[.]3 - WIN-DQL4WFWJXQ4`
+    - AD environment name:  `MASSFRICTION`
+    - LAN segment gateway:  `10.6.13[.]1`
+    - LAN segment broadcast address:  `10.6.13[.]255`
 
 ---
 
